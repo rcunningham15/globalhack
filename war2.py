@@ -214,15 +214,74 @@ def war():
     cwar2 = random.choice(deck)
     cwar3 = random.choice(deck)
     cwar4 = random.choice(deck)
-    flip = raw_input("Flip 1: y/n? ")
+    flip = raw_input("""
+    Flip1: y/n? """)
     if (flip == "y"): 
        flip = raw_input("Flip 2: y/n? ")
        if (flip == "y"):
            flip = raw_input("Flip 3: y/n? ")
            if (flip == "y"):
-               
+                if (pwar4 == 2):
+                    pname = "Two"
+                elif (pwar4 == 3):
+                    pname = "Three"
+                elif (pwar4 == 4):
+                    pname = "Four"
+                elif (pwar4 == 5):
+                    pname = "Five"
+                elif (pwar4 == 6):
+                    pname = "Six"
+                elif (pwar4 == 7):
+                    pname = "Seven"
+                elif (pwar4 == 8):
+                    pname = "Eight"
+                elif (pwar4 == 9):
+                    pname = "Nine"
+                elif (pwar4 == 10):
+                    pname = "Ten"
+                elif (pwar4 == 11):
+                    pname = "Jack"
+                elif (pwar4 == 12):
+                    pname = "Queen"
+                elif (pwar4 == 13):
+                    pname = "King"
+                elif (pwar4 == 14):
+                    pname = "Ace"
+                    
+                if (cwar4 == 2):
+                    cname = "Two"
+                elif (cwar4 == 3):
+                    cname = "Three"
+                elif (cwar4 == 4):
+                    cname = "Four"
+                elif (cwar4 == 5):
+                    cname = "Five"
+                elif (cwar4 == 6):
+                    cname = "Six"
+                elif (cwar4 == 7):
+                    cname = "Seven"
+                elif (cwar4 == 8):
+                    cname = "Eight"
+                elif (cwar4 == 9):
+                    cname = "Nine"
+                elif (cwar4 == 10):
+                    cname = "Ten"
+                elif (cwar4 == 11):
+                    cname = "Jack"
+                elif (cwar4 == 12):
+                    cname = "Queen"
+                elif (cwar4 == 13):
+                    cname = "King"
+                elif (cwar4 == 14):
+                    cname = "Ace"
+                
+                print("Your draw: " + str(pname))
+                print("Their draw: " + str(cname))
+                
                 if(cwar4 > pwar4):
-                    print ("Their war!")
+                    print ("""
+            Their war!
+            """)
                     deck.append(pwar1)
                     deck.append(pwar2)
                     deck.append(pwar3)
@@ -235,7 +294,9 @@ def war():
                     print("They have " + str(len(deck)) + " cards.")
                     
                 elif(cwar4 < pwar4):
-                    print ("Your war!")
+                    print ("""
+            Your war!
+            """)
                     pdeck.append(cwar1)
                     pdeck.append(cwar2)
                     pdeck.append(cwar3)
@@ -251,7 +312,7 @@ def war():
                     print ("Another War!")
                     anotherwar()
        
-def cardnamenowar():
+def pnamenowar():
     if (pdraw == 2):
         pname = "Two"
     elif (pdraw == 3):
@@ -278,8 +339,9 @@ def cardnamenowar():
         pname = "King"
     elif (pdraw == 14):
         pname = "Ace"
-    
-    elif (cdraw == 2):
+        
+def cnamenowar():
+    if (cdraw == 2):
         cname = "Two"
     elif (cdraw == 3):
         cname = "Three"
@@ -308,35 +370,102 @@ def cardnamenowar():
                
 #gameplay
 while(len(deck) > 0 or len(pdeck) > 0):
-    flip = raw_input("Flip: y/n? ")
+    
+    flip = raw_input("""
+    Flip: y/n? """)
     if (flip == "y"):
+        
         pdraw = random.choice(pdeck)
         cdraw = random.choice(deck)
-        cardnamenowar()
-        print("Your draw: " + pname)
-        print("Their draw: " + cname)
+        
+        #pnamenowar
+        if (pdraw == 2):
+            pname = "Two"
+        elif (pdraw == 3):
+            pname = "Three"
+        elif (pdraw == 4):
+            pname = "Four"
+        elif (pdraw == 5):
+            pname = "Five"
+        elif (pdraw == 6):
+            pname = "Six"
+        elif (pdraw == 7):
+            pname = "Seven"
+        elif (pdraw == 8):
+            pname = "Eight"
+        elif (pdraw == 9):
+            pname = "Nine"
+        elif (pdraw == 10):
+            pname = "Ten"
+        elif (pdraw == 11):
+            pname = "Jack"
+        elif (pdraw == 12):
+            pname = "Queen"
+        elif (pdraw == 13):
+            pname = "King"
+        elif (pdraw == 14):
+            pname = "Ace"
+        
+        #cnamenowar
+        if (cdraw == 2):
+            cname = "Two"
+        elif (cdraw == 3):
+            cname = "Three"
+        elif (cdraw == 4):
+            cname = "Four"
+        elif (cdraw == 5):
+            cname = "Five"
+        elif (cdraw == 6):
+            cname = "Six"
+        elif (cdraw == 7):
+            cname = "Seven"
+        elif (cdraw == 8):
+            cname = "Eight"
+        elif (cdraw == 9):
+            cname = "Nine"
+        elif (cdraw == 10):
+            cname = "Ten"
+        elif (cdraw == 11):
+            cname = "Jack"
+        elif (cdraw == 12):
+            cname = "Queen"
+        elif (cdraw == 13):
+            cname = "King"
+        elif (cdraw == 14):
+            cname = "Ace"
+            
+        print("Your draw: " + str(pname))
+        print("Their draw: " + str(cname))
+        
         
         if(cdraw > pdraw):
             print ("""
             Their pair.
             """)
+            
             deck.append(pdraw)
             pdeck.remove(pdraw)
+            
             print("You have " + str(len(pdeck)) + " cards.")
             print("They have " + str(len(deck)) + " cards.")
+        
         
         elif(cdraw < pdraw):
             print ("""
             Your pair.
             """)
+            
             pdeck.append(cdraw)
             deck.remove(cdraw)
+            
             print("You have " + str(len(pdeck)) + " cards.")
             print("They have " + str(len(deck)) + " cards.")
+        
         
         elif(cdraw == pdraw):
             print ("War!")
             war()
+            
             
 if (len(deck) == 0):
     print("You Win!")
