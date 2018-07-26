@@ -134,6 +134,7 @@ def athirdwar():
                 elif(cwar8 == pwar8):
                     print ("Another War!")
                     war()
+   
 def anotherwar():
     pwar1 = random.choice(pdeck)
     pwar2 = random.choice(pdeck)
@@ -249,19 +250,71 @@ def war():
                 elif(cwar4 == pwar4):
                     print ("Another War!")
                     anotherwar()
-                    
-#def cardname():
-    
-               
        
+def cardnamenowar():
+    if (pdraw == 2):
+        pname = "Two"
+    elif (pdraw == 3):
+        pname = "Three"
+    elif (pdraw == 4):
+        pname = "Four"
+    elif (pdraw == 5):
+        pname = "Five"
+    elif (pdraw == 6):
+        pname = "Six"
+    elif (pdraw == 7):
+        pname = "Seven"
+    elif (pdraw == 8):
+        pname = "Eight"
+    elif (pdraw == 9):
+        pname = "Nine"
+    elif (pdraw == 10):
+        pname = "Ten"
+    elif (pdraw == 11):
+        pname = "Jack"
+    elif (pdraw == 12):
+        pname = "Queen"
+    elif (pdraw == 13):
+        pname = "King"
+    elif (pdraw == 14):
+        pname = "Ace"
+    
+    elif (cdraw == 2):
+        cname = "Two"
+    elif (cdraw == 3):
+        cname = "Three"
+    elif (cdraw == 4):
+        cname = "Four"
+    elif (cdraw == 5):
+        cname = "Five"
+    elif (cdraw == 6):
+        cname = "Six"
+    elif (cdraw == 7):
+        cname = "Seven"
+    elif (cdraw == 8):
+        cname = "Eight"
+    elif (cdraw == 9):
+        cname = "Nine"
+    elif (cdraw == 10):
+        cname = "Ten"
+    elif (cdraw == 11):
+        cname = "Jack"
+    elif (cdraw == 12):
+        cname = "Queen"
+    elif (cdraw == 13):
+        cname = "King"
+    elif (cdraw == 14):
+        cname = "Ace"    
+               
 #gameplay
 while(len(deck) > 0 or len(pdeck) > 0):
     flip = raw_input("Flip: y/n? ")
     if (flip == "y"):
         pdraw = random.choice(pdeck)
         cdraw = random.choice(deck)
-        print("Your draw: " + str(pdraw))
-        print("Their draw: " + str(cdraw))
+        cardnamenowar()
+        print("Your draw: " + pname)
+        print("Their draw: " + cname)
         
         if(cdraw > pdraw):
             print ("""
